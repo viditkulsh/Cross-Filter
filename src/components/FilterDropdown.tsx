@@ -114,7 +114,7 @@ export const FilterDropdown = ({ column }: FilterDropdownProps) => {
             </button>
           )}
                   <div className={`p-2 rounded-lg transition-all duration-200 ${hasSelection ? 'bg-blue-100' : 'bg-gray-100 group-hover:bg-blue-100'}`}>
-                      <svg className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''} ${hasSelection ? 'text-blue-600' : 'text-gray-500 group-hover:text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''} ${hasSelection ? 'text-blue-600' : 'text-gray-500 group-hover:text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                       </svg>
                   </div>

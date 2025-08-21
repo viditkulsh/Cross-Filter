@@ -52,8 +52,8 @@ export const Pagination: React.FC<PaginationProps> = ({
               {/* Enhanced Page info */}
               <div className="flex items-center space-x-6">
                   <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                           </svg>
                       </div>
@@ -81,7 +81,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                       className="bi-button-secondary disabled:opacity-40 disabled:cursor-not-allowed p-3"
                       title="First page"
                   >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
                       </svg>
                   </button>
@@ -93,7 +93,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                       className="bi-button-secondary disabled:opacity-40 disabled:cursor-not-allowed p-3"
                       title="Previous page"
                   >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
                       </svg>
                   </button>
@@ -136,7 +136,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                       className="bi-button-secondary disabled:opacity-40 disabled:cursor-not-allowed p-3"
                       title="Next page"
                   >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                       </svg>
                   </button>
@@ -148,7 +148,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                       className="bi-button-secondary disabled:opacity-40 disabled:cursor-not-allowed p-3"
                       title="Last page"
                   >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
                       </svg>
                   </button>

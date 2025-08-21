@@ -53,175 +53,163 @@ export const FilterDropdown = ({ column }: FilterDropdownProps) => {
 
   return (
     <div className="relative">
-      {/* Enhanced Dropdown Button with Visual Hierarchy */}
+          {/* Modern Dropdown Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-full p-4 text-left flex items-center justify-between rounded-xl transition-all duration-300 border-2 focus:outline-none shadow-sm ${
+              className={`w-full p-3 text-left flex items-center justify-between rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 ${
           hasSelection
-            ? 'bg-gradient-to-r from-blue-50 to-purple-50 border-blue-300 text-blue-800 shadow-md'
-            : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300 hover:shadow-md'
-        } ${isOpen ? 'ring-4 ring-blue-100 border-blue-400' : ''}`}
+                ? 'bg-blue-50 border-blue-300 text-blue-900'
+                : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
+            }`}
       >
-        <div className="flex-1">
+              <div className="flex-1 min-w-0">
           {hasSelection ? (
             <div>
-              <span className="font-semibold text-sm">
+                          <div className="font-medium text-sm">
                 {selectedValues.length} value{selectedValues.length !== 1 ? 's' : ''} selected
-              </span>
-              <div className="flex flex-wrap gap-1 mt-2">
-                {selectedValues.slice(0, 3).map(value => (
-                  <span key={value} className="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-md font-medium">
+                          </div>
+                          <div className="flex flex-wrap gap-1 mt-1">
+                              {selectedValues.slice(0, 2).map(value => (
+                                  <span key={value} className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800">
                     {value}
                   </span>
                 ))}
-                {selectedValues.length > 3 && (
-                  <span className="inline-flex items-center px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">
-                    +{selectedValues.length - 3} more
+                              {selectedValues.length > 2 && (
+                                  <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600">
+                                      +{selectedValues.length - 2}
                   </span>
                 )}
               </div>
             </div>
           ) : (
             <div>
-              <span className="text-gray-500 font-medium">Select values...</span>
-              <div className="text-xs text-gray-400 mt-1">
-                {allOptions.length} options available
-              </div>
+                              <div className="text-sm text-gray-500">All values</div>
+                              <div className="text-xs text-gray-400">{allOptions.length} options</div>
             </div>
           )}
         </div>
         
-        {/* Enhanced Dropdown Icon */}
-        <div className="ml-4 flex items-center space-x-2">
+              <div className="ml-3 flex items-center space-x-2">
           {hasSelection && (
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 clearAll();
               }}
-              className="p-1 hover:bg-red-100 rounded-full transition-colors duration-200"
+                          className="p-1 hover:bg-red-100 rounded text-red-500 transition-colors"
               title="Clear selection"
             >
-              <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           )}
-          <div className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
-            <svg className={`w-5 h-5 ${hasSelection ? 'text-blue-500' : 'text-gray-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </div>
-        </div>
+                  <svg className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''} ${hasSelection ? 'text-blue-500' : 'text-gray-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+              </div>
       </button>
 
-      {/* Enhanced Dropdown Menu with Better Spacing */}
+          {/* Modern Dropdown Menu */}
       {isOpen && (
-        <div className="absolute z-50 w-full mt-3 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden animate-fade-in">
-          {/* Enhanced Header with Better Alignment */}
-          <div className="p-4 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-gray-100">
-            <div className="flex justify-between items-center mb-3">
-              <div>
-                <span className="text-sm font-bold text-gray-800 uppercase tracking-wide">
-                  Filter Options
-                </span>
-                <div className="text-xs text-gray-500 mt-1">
-                  {availableOptions.length} of {allOptions.length} available
-                </div>
-              </div>
-              <div className="flex space-x-3">
+              <div className="absolute z-50 w-full mt-1 bg-white rounded-lg shadow-lg border border-gray-200 animate-fade-in">
+                  {/* Header */}
+                  <div className="p-3 border-b border-gray-100 bg-gray-50 rounded-t-lg">
+                      <div className="flex justify-between items-center mb-2">
+                          <div className="text-sm font-medium text-gray-900">Filter Options</div>
+                          <div className="flex space-x-2">
                 <button
                   onClick={selectAll}
                   disabled={availableOptions.length === 0}
-                  className="text-sm text-blue-600 hover:text-blue-800 font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
+                                  className="text-xs text-blue-600 hover:text-blue-800 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Select All
+                                  All
                 </button>
                 <button
                   onClick={clearAll}
                   disabled={selectedValues.length === 0}
-                  className="text-sm text-red-600 hover:text-red-800 font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
+                                  className="text-xs text-red-600 hover:text-red-800 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Clear
+                                  None
                 </button>
               </div>
             </div>
-            
-            {/* Selection Summary */}
-            {hasSelection && (
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-2">
-                <div className="text-xs text-blue-700 font-medium">
-                  {selectedValues.length} selected: {selectedValues.join(', ')}
-                </div>
-              </div>
-            )}
+                      <div className="text-xs text-gray-500">
+                          {availableOptions.length} of {allOptions.length} available
+                      </div>
           </div>
 
-          {/* Enhanced Options List with Better Visual Hierarchy */}
-          <div className="max-h-64 overflow-y-auto">
+                  {/* Options List */}
+                  <div className="max-h-48 overflow-y-auto">
             {allOptions.length === 0 ? (
-              <div className="p-6 text-center text-gray-500">
-                <div className="text-3xl mb-2">📊</div>
-                <div className="font-medium">No options available</div>
-                <div className="text-sm">Check if data loaded correctly</div>
+                          <div className="p-4 text-center text-gray-500">
+                              <div className="text-2xl mb-1">📊</div>
+                              <div className="text-sm">No options available</div>
               </div>
             ) : (
-              <div className="py-2">
+                              <div className="py-1">
                 {allOptions.map((option) => {
                   const isSelected = selectedValues.includes(option);
                   const isAvailable = availableOptions.includes(option);
+                    const modValue = Number(option);
                   
                   return (
                     <button
                       key={option}
                       onClick={() => toggleOption(option)}
                       disabled={!isAvailable}
-                      className={`w-full px-4 py-3 text-left flex items-center justify-between transition-all duration-200 ${
+                          className={`w-full px-3 py-2 text-left flex items-center justify-between transition-colors ${
                         !isAvailable 
-                          ? 'opacity-40 cursor-not-allowed bg-gray-50' 
-                          : 'cursor-pointer hover:bg-gray-50'
+                          ? 'opacity-40 cursor-not-allowed'
+                          : 'hover:bg-gray-50 cursor-pointer'
                       } ${
                         isSelected 
-                          ? 'bg-blue-50 border-r-4 border-blue-500' 
+                          ? 'bg-blue-50' 
                           : ''
                       }`}
                     >
                       <div className="flex items-center space-x-3">
-                        {/* Selection Indicator */}
-                        <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition-colors duration-200 ${
+                              {/* Checkbox */}
+                              <div className={`w-4 h-4 rounded border-2 flex items-center justify-center transition-colors ${
                           isSelected 
-                            ? 'bg-blue-500 border-blue-500' 
+                                  ? 'bg-blue-600 border-blue-600' 
                             : 'border-gray-300'
                         }`}>
                           {isSelected && (
-                            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                             </svg>
                           )}
                         </div>
                         
-                        {/* Option Value */}
+                              {/* Value */}
                         <span className={`font-medium ${
                           isSelected 
-                            ? 'text-blue-700' 
+                                  ? 'text-blue-900' 
                             : isAvailable 
-                              ? 'text-gray-800' 
+                                      ? 'text-gray-900' 
                               : 'text-gray-400'
                         }`}>
                           {option}
                         </span>
+
+                              {/* Color indicator for modulo values */}
+                              <span className={`status-indicator ${modValue === 0 ? 'mod-0' :
+                                      modValue === 1 ? 'mod-1' :
+                                          modValue === 2 ? 'mod-2' :
+                                              modValue === 3 ? 'mod-3' :
+                                                  modValue === 4 ? 'mod-4' :
+                                                      'mod-5'
+                                  }`}>
+                                  {option}
+                              </span>
                       </div>
                       
-                      {/* Status Indicators */}
-                      <div className="flex items-center space-x-2">
+                          {/* Status indicators */}
+                          <div className="flex items-center space-x-1">
                         {!isAvailable && (
-                          <span className="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded-full font-medium">
-                            Filtered out
-                          </span>
-                        )}
-                        {isSelected && (
-                          <span className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded-full font-medium">
-                            Selected
+                                  <span className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded">
+                                      filtered out
                           </span>
                         )}
                       </div>
@@ -234,7 +222,7 @@ export const FilterDropdown = ({ column }: FilterDropdownProps) => {
         </div>
       )}
 
-      {/* Backdrop to close dropdown */}
+          {/* Backdrop */}
       {isOpen && (
         <div 
           className="fixed inset-0 z-40" 

@@ -65,10 +65,7 @@ export const FilterDropdown = ({ column }: FilterDropdownProps) => {
               <div className="flex-1 min-w-0">
           {hasSelection ? (
             <div>
-                          <div className="font-bold text-sm flex items-center">
-                              <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                              </svg>
+                          <div className="font-bold text-sm">
                 {selectedValues.length} value{selectedValues.length !== 1 ? 's' : ''} selected
                           </div>
                           <div className="flex flex-wrap gap-2 mt-2">
@@ -87,10 +84,7 @@ export const FilterDropdown = ({ column }: FilterDropdownProps) => {
             </div>
           ) : (
             <div>
-                              <div className="text-sm text-gray-600 font-medium flex items-center">
-                                  <svg className="w-4 h-4 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                  </svg>
+                              <div className="text-sm text-gray-600 font-medium">
                                   Select values to filter
                               </div>
                               <div className="text-xs text-gray-400 mt-1">{allOptions.length} options available</div>
@@ -108,15 +102,10 @@ export const FilterDropdown = ({ column }: FilterDropdownProps) => {
                           className="p-2 hover:bg-red-100 rounded-lg text-red-500 transition-all duration-200 hover:scale-110"
               title="Clear selection"
             >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
-              </svg>
             </button>
           )}
                   <div className={`p-2 rounded-lg transition-all duration-200 ${hasSelection ? 'bg-blue-100' : 'bg-gray-100 group-hover:bg-blue-100'}`}>
-                      <svg className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''} ${hasSelection ? 'text-blue-600' : 'text-gray-500 group-hover:text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                      </svg>
+                      ▼
                   </div>
               </div>
       </button>
@@ -128,9 +117,6 @@ export const FilterDropdown = ({ column }: FilterDropdownProps) => {
                   <div className="p-4 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-gray-100 rounded-t-xl">
                       <div className="flex justify-between items-center mb-3">
                           <div className="text-sm font-bold text-gray-900 flex items-center">
-                              <svg className="w-4 h-4 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
-                              </svg>
                               Filter Options
                           </div>
                           <div className="flex space-x-3">
@@ -139,29 +125,20 @@ export const FilterDropdown = ({ column }: FilterDropdownProps) => {
                   disabled={availableOptions.length === 0}
                                   className="text-xs text-blue-600 hover:text-blue-800 font-bold disabled:opacity-50 disabled:cursor-not-allowed px-3 py-1 bg-blue-50 rounded-full border border-blue-200 hover:bg-blue-100 transition-all duration-200"
                 >
-                                  <svg className="w-3 h-3 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                  </svg>
-                                  Select All
+                                  ✓ Select All
                 </button>
                 <button
                   onClick={clearAll}
                   disabled={selectedValues.length === 0}
                                   className="text-xs text-red-600 hover:text-red-800 font-bold disabled:opacity-50 disabled:cursor-not-allowed px-3 py-1 bg-red-50 rounded-full border border-red-200 hover:bg-red-100 transition-all duration-200"
                 >
-                                  <svg className="w-3 h-3 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                  </svg>
-                                  Clear
+                                  ✗ Clear
                 </button>
               </div>
             </div>
                       <div className="flex items-center justify-between text-xs text-gray-600">
                           <span className="flex items-center">
-                              <svg className="w-3 h-3 text-green-500 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                              </svg>
-                              {availableOptions.length} of {allOptions.length} available
+                              ✓ {availableOptions.length} of {allOptions.length} available
                           </span>
                           {selectedValues.length > 0 && (
                               <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full font-medium">
@@ -210,9 +187,7 @@ export const FilterDropdown = ({ column }: FilterDropdownProps) => {
                             : 'border-gray-300 hover:border-blue-400'
                         }`}>
                           {isSelected && (
-                                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>
+                                      <span className="text-white font-bold">✓</span>
                           )}
                         </div>
                         
@@ -245,18 +220,12 @@ export const FilterDropdown = ({ column }: FilterDropdownProps) => {
                           <div className="flex items-center space-x-2">
                               {isSelected && (
                                   <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-bold flex items-center">
-                                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                      </svg>
-                                      Selected
+                                      ✓ Selected
                           </span>
                               )}
                         {!isAvailable && (
                                   <span className="text-xs text-red-600 bg-red-100 px-3 py-1 rounded-full font-medium border border-red-200">
-                                      <svg className="w-3 h-3 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728L5.636 5.636m12.728 12.728L18.364 5.636M5.636 18.364l12.728-12.728" />
-                                      </svg>
-                                      Filtered out
+                                      ✗ Filtered out
                           </span>
                         )}
                       </div>

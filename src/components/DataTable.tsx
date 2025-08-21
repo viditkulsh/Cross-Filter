@@ -54,10 +54,7 @@ export const DataTable = () => {
                 No records match your current filter criteria. Try adjusting or clearing your filters to see data.
             </p>
             <div className="inline-flex items-center space-x-3 text-blue-600 bg-gradient-to-r from-blue-50 to-indigo-50 px-6 py-3 rounded-xl border border-blue-200 shadow-sm">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className="text-sm font-semibold">Clear filters to view all data</span>
+                ℹ️ <span className="text-sm font-semibold">Clear filters to view all data</span>
             </div>
       </div>
     );
@@ -68,22 +65,13 @@ export const DataTable = () => {
           {/* Enhanced Table Header Info */}
           <div className="flex items-center justify-between mb-6">
               <div>
-                  <h3 className="text-xl font-bold text-gray-900 flex items-center">
-                      <svg className="w-4 h-4 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                      </svg>
+                  <h3 className="text-xl font-bold text-gray-900">
                       Data Results
                   </h3>
-                  <p className="text-sm text-gray-600 mt-1 flex items-center">
-                      <svg className="w-4 h-4 text-green-500 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                  <p className="text-sm text-gray-600 mt-1">
                       {filteredData.length.toLocaleString()} records total
                       {sortConfig && (
                           <span className="ml-3 text-blue-600 bg-blue-100 px-2 py-1 rounded-full text-xs font-medium">
-                              <svg className="w-3 h-3 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
-                              </svg>
                               Sorted by {sortConfig.key} ({sortConfig.direction === 'asc' ? '↑' : '↓'})
                           </span>
                       )}
@@ -96,9 +84,6 @@ export const DataTable = () => {
                           onClick={() => setSortConfig(null)}
                           className="bi-button-secondary text-sm"
                       >
-                          <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                          </svg>
                           Clear sort
                       </button>
                   )}
@@ -123,19 +108,7 @@ export const DataTable = () => {
                         <div className="flex items-center justify-between">
                                           <div className="flex items-center gap-3">
                                         {/* Enhanced Column Icons */}
-                                              <div className="w-5 h-5 bg-gray-600 rounded flex items-center justify-center">
-                                            {col.startsWith('mod') ? (
-                                                <svg className="w-3 h-3 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
-                                                </svg>
-                                            ) : (
-                                                <svg className="w-3 h-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
-                                                </svg>
-                                            )}
-                                        </div>
-
-                                <div>
+                                      <div>
                                     <span className="font-bold text-sm">
                                         {col === 'value' ? 'Primary Value' : col.replace('mod', 'Modulo ')}
                                     </span>
@@ -156,26 +129,18 @@ export const DataTable = () => {
 
                             {/* Enhanced Sort indicator */}
                             <div className="flex flex-col ml-3">
-                                <svg
-                                    className={`w-4 h-4 transition-all duration-200 ${sortConfig?.key === col && sortConfig.direction === 'asc'
+                                <span className={`text-xs transition-all duration-200 ${sortConfig?.key === col && sortConfig.direction === 'asc'
                                             ? 'text-yellow-400 scale-125'
                                             : 'text-gray-400 group-hover:text-gray-300'
-                                        }`}
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                >
-                                    <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
-                                </svg>
-                                <svg
-                                    className={`w-4 h-4 -mt-1 transition-all duration-200 ${sortConfig?.key === col && sortConfig.direction === 'desc'
+                                        }`}>
+                                    ▲
+                                </span>
+                                <span className={`text-xs -mt-1 transition-all duration-200 ${sortConfig?.key === col && sortConfig.direction === 'desc'
                                             ? 'text-yellow-400 scale-125'
                                             : 'text-gray-400 group-hover:text-gray-300'
-                                        }`}
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                >
-                                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                                </svg>
+                                        }`}>
+                                    ▼
+                                </span>
                             </div>
                     </div>
                   </th>
@@ -212,10 +177,7 @@ export const DataTable = () => {
                                                         numValue === 4 ? 'mod-4' :
                                                             'mod-5'
                                         }`}>
-                                        <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                        Mod {col.replace('mod', '')} = {value}
+                                        ✓ Mod {col.replace('mod', '')} = {value}
                                     </span>
                                 )}
 
@@ -223,10 +185,7 @@ export const DataTable = () => {
                                 {col === 'value' && (
                                     <div className="flex items-center space-x-2">
                                         <span className="text-xs text-blue-600 bg-blue-100 px-3 py-1 rounded-full font-bold flex items-center">
-                                            <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                            </svg>
-                                            Primary Data
+                                            ⚡ Primary Data
                                         </span>
                                         <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
                                     </div>

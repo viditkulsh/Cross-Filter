@@ -96,11 +96,6 @@ function Dashboard() {
             {/* Filter Panel Header */}
             <div className="mb-8">
               <div className="flex items-center mb-6">
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-                  </svg>
-                </div>
                 <div>
                   <h2 className="text-lg font-semibold text-gray-900">Smart Filters</h2>
                   <p className="text-sm text-gray-500">Cross-filtering enabled</p>
@@ -177,16 +172,11 @@ function Dashboard() {
 
             {/* Help Section */}
             <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
-              <div className="flex">
-                <svg className="w-4 h-4 text-blue-600 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <div>
-                  <h4 className="text-sm font-semibold text-blue-900 mb-1">Cross-filtering</h4>
-                  <p className="text-xs text-blue-700 leading-relaxed">
-                    Selecting values in one filter automatically updates available options in other filters.
-                  </p>
-                </div>
+              <div>
+                <h4 className="text-sm font-semibold text-blue-900 mb-1">Cross-filtering</h4>
+                <p className="text-xs text-blue-700 leading-relaxed">
+                  Selecting values in one filter automatically updates available options in other filters.
+                </p>
               </div>
             </div>
           </div>
@@ -202,9 +192,6 @@ function Dashboard() {
                   onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
                   className="bi-button-secondary mr-4 md:hidden"
                 >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
                 </button>
                 <div>
                   <h1 className="text-2xl font-bold text-gray-900">Business Intelligence Dashboard</h1>
@@ -216,16 +203,10 @@ function Dashboard() {
               <div className="flex items-center space-x-3">
                 {hasActiveFilters && (
                   <button onClick={clearAllFilters} className="bi-button-secondary">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
                     Clear filters
                   </button>
                 )}
                 <button className="bi-button-primary">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                  </svg>
                   Export data
                 </button>
               </div>

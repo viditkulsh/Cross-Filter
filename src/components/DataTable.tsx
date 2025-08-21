@@ -108,22 +108,22 @@ export const DataTable = () => {
               </div>
           </div>
 
-          {/* Professional Data Table */}
-          <div className="bi-table">
+          {/* Enhanced Data Table */}
+          <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
                   <table className="w-full">
-                      <thead className="bi-table-header">
+                      <thead className="bg-gray-100 border-b border-gray-200">
                           <tr>
                               {columns.map((col) => (
                   <th 
                     key={col} 
-                        className="px-8 py-5 text-left cursor-pointer hover:bg-gray-800 transition-all duration-200 group"
+                                      className="px-6 py-4 text-left cursor-pointer hover:bg-gray-200 transition-colors duration-150 group"
                         onClick={() => handleSort(col)}
                   >
                         <div className="flex items-center justify-between">
-                            <div className="flex items-center space-x-3">
+                                          <div className="flex items-center gap-3">
                                         {/* Enhanced Column Icons */}
-                                        <div className="w-6 h-6 bg-gray-700 rounded-lg flex items-center justify-center">
+                                              <div className="w-5 h-5 bg-gray-600 rounded flex items-center justify-center">
                                             {col.startsWith('mod') ? (
                                                 <svg className="w-3 h-3 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
@@ -182,24 +182,23 @@ export const DataTable = () => {
                 ))}
               </tr>
                       </thead>
-            <tbody className="divide-y divide-gray-200">
+                      <tbody className="bg-white divide-y divide-gray-200">
               {paginatedData.map((row, rowIndex) => (
                 <tr 
                   key={rowIndex} 
-                      className="bi-table-row animate-fade-in"
-                  style={{ animationDelay: `${rowIndex * 0.02}s` }}
+                      className={`transition-colors duration-150 hover:bg-gray-50 ${rowIndex % 2 === 0 ? 'bg-white' : 'bg-gray-25'}`}
                 >
                       {columns.map(col => {
                           const value = row[col];
                           const numValue = Number(value);
 
                           return (
-                              <td key={col} className="px-8 py-5 whitespace-nowrap">
-                            <div className="flex items-center space-x-4">
-                                {/* Enhanced Primary value display */}
-                                <span className={`font-semibold ${col === 'value'
-                                        ? 'text-xl text-gray-900 font-bold'
-                                        : 'text-lg text-gray-700'
+                              <td key={col} className="px-6 py-4 whitespace-nowrap">
+                                  <div className="flex items-center gap-3">
+                                      {/* Value display */}
+                                      <span className={`font-medium ${col === 'value'
+                                          ? 'text-lg text-gray-900 font-semibold'
+                                          : 'text-sm text-gray-700'
                                     }`}>
                                     {value}
                                 </span>

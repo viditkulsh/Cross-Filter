@@ -504,3 +504,8 @@ body {
       left: 0;
   }
 }
+
+/* Additional utilities */
+.bg-gray-25 {
+  background-color: #fcfcfd;
+}
